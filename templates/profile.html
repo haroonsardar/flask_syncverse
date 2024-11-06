@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | SyncVerse App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+   
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>SyncVerse</h2>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('profile') }}" class="active">Profile</a></li>
+                    <li><a href="{{ url_for('settings') }}">Settings</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>User Profile</h1>
+            </header>
+            <section class="profile-section">
+                <div class="profile-info">
+                    <label>Name:</label>
+                    <p id="user-name">{{ user.name }}</p>
+                </div>
+                <div class="profile-info">
+                    <label>Email:</label>
+                    <p id="user-email">{{ user.email }}</p>
+                </div>
+                <button class="edit-profile-button" onclick="editProfile()">Edit Profile</button>
+
+                <div class="profile-edit" style="display:none;">
+                    <label for="name">Edit Name:</label>
+                    <input type="text" id="name" value="{{ user.name }}">
+                    <label for="email">Edit Email:</label>
+                    <input type="email" id="email" value="{{ user.email }}">
+                    <button class="save-profile-button" onclick="saveProfile()">Save Changes</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 SyncVerse. This is a SyncVerse App created by HAROON SARDAR</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+  
+</head>
+<body>
+  <div class="container slide-in">
+    <h1>Create Account</h1>
+    <form action="/register" method="POST">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="/login">Sign In</a></p>
+  </div>
+</body>
+</html>

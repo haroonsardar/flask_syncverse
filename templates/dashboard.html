@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | SyncVerse App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+ 
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>SyncVerse</h2>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Dashboard</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/settings">Settings</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header>
+                <h1>Welcome to SyncVerse Dashboard</h1>
+            </header>
+
+            <!-- Upload and Sync Section -->
+            <section class="upload-section">
+                <h2>Upload Video and Audio for Syncing</h2>
+                <div class="upload-container">
+                    <label for="video-upload">Upload Video:</label>
+                    <input type="file" id="video-upload" accept="video/*">
+                </div>
+                <div class="upload-container">
+                    <label for="audio-upload">Upload Audio:</label>
+                    <input type="file" id="audio-upload" accept="audio/*">
+                </div>
+                <button class="sync-button" onclick="startSyncverse()">Start SyncVerse</button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 SyncVerse. All rights reserved.</p>
+        <p>&copy; 2024 SyncVerse Created by HAROON SARDAR</p>
+    </footer>
+
+</body>
+</html>

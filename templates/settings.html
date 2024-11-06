@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | SyncVerse App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}">
+    <script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+</head>
+<body>
+    <div class="container" id="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <h2>SyncVerse</h2>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                    <li><a href="{{ url_for('settings') }}" class="active">Settings</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="main-content">
+            <header>
+                <h1>Settings</h1>
+            </header>
+            <section class="settings-section" id="settings-section">
+                <h2>Application Settings</h2>
+                <label for="theme">Theme:</label>
+                <select id="theme" onchange="changeTheme()">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+                <br>
+                <button class="save-settings-button" onclick="saveSettings()">Save Settings</button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 SyncVerse. This is a SyncVerse App created by HAROON SARDAR</p>
+    </footer>
+
+</body>
+</html>

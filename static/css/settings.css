@@ -1,0 +1,167 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Container and Layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #4b4e6d;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    animation: slide-in 0.8s ease-in-out;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #ff8c42;
+    animation: fade-in 1.5s ease;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background-color: #6b7280;
+    transform: translateX(5px);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f5f6fa;
+    color: #4b4e6d;
+    animation: fade-in 1.2s ease;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.main-content header h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Settings Section */
+.settings-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    animation: fade-in 1.5s ease;
+}
+
+.settings-section h2 {
+    color: #4b4e6d;
+    margin-bottom: 10px;
+}
+
+.settings-section label {
+    display: block;
+    font-size: 1em;
+    color: #6b7280;
+    margin-bottom: 5px;
+}
+
+.settings-section select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.save-settings-button {
+    padding: 10px 15px;
+    background-color: #4b4e6d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.save-settings-button:hover {
+    background-color: #3b3d5c;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #4b4e6d;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Animations */
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+.sidebar.dark-mode {
+    background-color: #1f1f1f;
+}
+
+.settings-section.dark-mode {
+    background-color: #3b3b3b;
+}
+
+.settings-section.dark-mode label,
+.settings-section.dark-mode select {
+    color: #e0e0e0;
+}
